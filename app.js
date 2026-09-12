@@ -407,8 +407,8 @@ const flowersData = [
     eng: "1. Your soft and forgiving heart — which Allah blessed with mercy and kindness, in-sha-Allah."
   },
   {
-    urdu: "۲. آپ کی وہ راتوں کی خاموش دعائیں — جنہیں اللہ کے حکم اور فضل سے میری حفاظت کا ذریعہ بنایا گیا ہے ان شاء اللہ۔",
-    eng: "2. Your quiet late-night prayers — which by Allah's will and permission shield me, in-sha-Allah."
+    urdu: "۲. آپ کی وہ راتوں کی خاموش دعائیں — جنہیں اللہ تعالیٰ نے اپنے فضل و کرم سے میری حفاظت کا ذریعہ بنایا ہے۔",
+    eng: "2. Your quiet late-night prayers — which by Allah's will and grace shield and protect me."
   },
   {
     urdu: "۳. آپ کی میٹھی مسکراہٹ — جس کے ذریعے اللہ تعالیٰ ہمارے گھر میں رونق اور خوشی پیدا کرتا ہے ان شاء اللہ۔",
@@ -423,8 +423,8 @@ const flowersData = [
     eng: "5. Your gentle, caring hands — in whose touch Allah placed barakah and comfort, in-sha-Allah."
   },
   {
-    urdu: "۶. آپ کا بے پناہ صبر اور قربانیاں — جن کا بہترین اور مکمل اجر صرف اللہ تعالیٰ ہی عطا کرے گا ان شاء اللہ۔",
-    eng: "6. Your boundless patience and sacrifices — whose ultimate reward lies with Allah alone, in-sha-Allah."
+    urdu: "۶. آپ کا بے پناہ صبر اور قربانیاں — اللہ تعالیٰ آپ کو ان کا بہترین اور کامل ترین اجر عطا فرمائے۔ آمین۔",
+    eng: "6. Your boundless patience and sacrifices — May Allah grant you the most beautiful reward for them. Ameen."
   },
   {
     urdu: "۷. جب بھی میں بیمار ہوا، آپ کا رات بھر جاگنا اور رو رو کر اللہ تعالیٰ سے میری شفا مانگنا۔",
