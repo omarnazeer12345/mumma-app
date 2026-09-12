@@ -1,5 +1,5 @@
 // Service Worker for Parveen Banu's Sanctuary
-const CACHE_NAME = 'parveen-sanctuary-v2';
+const CACHE_NAME = 'parveen-sanctuary-v5';
 const ASSETS = [
   './',
   './index.html',
