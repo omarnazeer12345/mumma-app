@@ -37,6 +37,6 @@ A dedicated, mobile-first peaceful sanctuary and digital love letter crafted wit
 - **10 Reasons of Love:** Interactive blooming bouquet of jasmine and roses.
 - **Tactile Pearl Tasbih:** Emerald prayer bead with realistic click sound, haptics, and daily dhikr presets.
 - **Daily Dua Jar:** Personalized Quranic and Sunnah duas for her health, peace of mind, and Jannah.
-- **Sacred Promises:** Filial devotion checklist in Urdu and English.
+- **Sincere Intentions & Efforts:** Filial devotion checklist in Urdu and English.
 - **Halal Soothing Rain:** Procedural Web Audio synthesizer (100% halal, no music).
 - **Mobile PWA Ready:** Add to Home Screen on iPhone or Android to open like an app.
