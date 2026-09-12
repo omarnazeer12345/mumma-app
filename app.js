@@ -293,8 +293,8 @@ const moodResponses = {
     eng: "Masha'Allah Ammi Jaan! Your smile is the greatest wealth of our home. O Allah! Keep Parveen Banu smiling and joyful always. Ameen!"
   },
   tired: {
-    urdu: "امی جان، اب سب کام چھوڑ دیجیے اور آرام سے تکیہ لگا کر لیٹ جائیں۔ ایک گرم چائے کی چسکی لیں، آپ کے اس بچے کی جان آپ پر قربان، ہم آپ کی خدمت کے لیے ہر وقت حاضر ہیں۔ ☕",
-    eng: "Ammi Jaan, please leave all chores and lean back on a cozy pillow. Take a warm sip of tea. Your child is always at your service."
+    urdu: "امی جان، اب سب کام چھوڑ دیجیے اور آرام سے تکیہ لگا کر لیٹ جائیں۔ ایک گرم چائے کی چسکی لیں، آپ کے اس بچے کی جان آپ پر قربان، ہم آپ کی خدمت کے لیے ہر وقت حاضر ہیں ان شاء اللہ۔ ☕",
+    eng: "Ammi Jaan, please leave all chores and lean back on a cozy pillow. Take a warm sip of tea. Your child is always at your service in-sha-Allah."
   },
   sad: {
     urdu: "امی جان، اپنے اس بچے کو معاف کر دیجیے۔ آپ کی آنکھوں کا ایک آنسو اور دل کا ملال ہمارے لیے ناقابلِ برداشت ہے۔ ہم دل سے آپ سے معافی مانگتے ہیں اور آپ کے گلے لگتے ہیں۔ پلیز مسکرا دیجیے۔ 💖",
@@ -327,6 +327,10 @@ moodBtns.forEach(btn => {
 
 // --- 5. AMMI'S TEA CORNER (Bilingual) ---
 const chaiThoughts = [
+  {
+    urdu: "امی جان، گرم چائے کا گھونٹ لیں اور سکون فرمائیں۔ آپ کا یہ بچہ آپ کی خدمت کے لیے ہر وقت حاضر ہے ان شاء اللہ۔",
+    eng: "Ammi Jaan, take a warm sip of tea and relax. Your child is always at your service in-sha-Allah."
+  },
   {
     urdu: "امی جان! دنیا کا کوئی بھی شیف اتنی لذیذ اور پرسکون چائے نہیں بنا سکتا جتنی آپ کے پیار بھرے ہاتھوں کی ہوتی ہے۔",
     eng: "Ammi Jaan! No chef in the world can brew tea as soothing and delicious as the one made by your loving hands."
