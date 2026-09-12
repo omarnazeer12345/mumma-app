@@ -3,15 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta name="theme-color" content="#FAF7F2">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="امی کا گوشہ">
   <title>پروین بانو کا گوشۂ سکون | Parveen Banu's Sanctuary of Peace</title>
   
-  <link rel="stylesheet" href="./styles.css?v=4">
+  <link rel="stylesheet" href="./styles.css?v=fresh2026">
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%22100%22%20height=%22100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+  <script>
+    // Force unregister any stale service workers and clear cache
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(regs) {
+        for (var r of regs) { r.unregister(); }
+      });
+    }
+    if ('caches' in window) {
+      caches.keys().then(function(keys) {
+        for (var k of keys) { caches.delete(k); }
+      });
+    }
+  </script>
 </head>
 <body>
 
@@ -101,7 +117,7 @@
             <span class="mood-sub-eng">Alhamdulillah, happy</span>
           </button>
           <button class="mood-btn" data-mood="tired">
-            <span class="mood-emoji">☕</span>
+            <span class="mood-emoji">🛋️</span>
             <span class="mood-label-urdu">تھکی ہوئی ہوں</span>
             <span class="mood-sub-eng">Feeling tired</span>
           </button>
@@ -117,42 +133,6 @@
           <p id="mood-response-eng" class="mood-response-eng"></p>
         </div>
       </div>
-    </section>
-
-    <!-- SECTION 1: CHAI NOOK (چائے کا وقت) -->
-    <section id="chai" class="sanctuary-card tea-container">
-      <div class="section-header" style="width: 100%;">
-        <span class="section-tag">☕ Warm Chai Nook</span>
-        <h2 class="section-urdu-title">چائے کا وقت اور پیار</h2>
-      </div>
-
-      <div id="teacup-interactive" class="teacup-visual-wrap" title="چائے کا گھونٹ لینے کے لیے ٹیپ کریں">
-        <div class="steam-group" aria-hidden="true">
-          <div class="steam-particle"></div>
-          <div class="steam-particle"></div>
-          <div class="steam-particle"></div>
-        </div>
-        <svg class="teacup-svg" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <ellipse cx="50" cy="74" rx="42" ry="6" fill="#E8DFCE"/>
-          <ellipse cx="50" cy="72" rx="38" ry="5" fill="#FAF6EE" stroke="#C5A059" stroke-width="1.5"/>
-          <path d="M22 28C22 28 20 62 50 62C80 62 78 28 78 28H22Z" fill="#FFFDF8" stroke="#C5A059" stroke-width="2"/>
-          <ellipse cx="50" cy="28" rx="28" ry="7" fill="#8C4820"/>
-          <ellipse cx="50" cy="28" rx="24" ry="5" fill="#B87333"/>
-          <path d="M78 36C86 36 92 41 92 48C92 56 84 59 75 57" stroke="#C5A059" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M42 42C45 45 55 45 58 42" stroke="#D9828C" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="50" cy="48" r="2" fill="#D9828C"/>
-        </svg>
-      </div>
-
-      <div class="chai-thought-box">
-        <p id="chai-urdu-text" class="chai-urdu-quote">امی جان، گرم چائے کا گھونٹ لیں اور سکون فرمائیں۔ آپ کا یہ بچہ آپ کی خدمت کے لیے ہر وقت حاضر ہے ان شاء اللہ۔</p>
-        <p id="chai-eng-text" class="chai-eng-quote">Ammi Jaan, take a warm sip of tea and relax. Your child is always at your service in-sha-Allah.</p>
-      </div>
-
-      <button id="btn-sip-tea" class="btn-sip-tea">
-        <span>☕</span>
-        <span>چائے کا نیا پیغام کھولیں | Another Tea Note</span>
-      </button>
     </section>
 
     <!-- SECTION 2: HEARTFELT LETTER (خط برائے امی جان) -->
@@ -488,11 +468,6 @@
       <span class="bottom-nav-label-urdu">سکون</span>
       <span class="bottom-nav-label-eng">Peace</span>
     </a>
-    <a href="#chai" class="bottom-nav-item">
-      <span class="bottom-nav-icon" aria-hidden="true">☕</span>
-      <span class="bottom-nav-label-urdu">چائے</span>
-      <span class="bottom-nav-label-eng">Tea</span>
-    </a>
     <a href="#letter" class="bottom-nav-item">
       <span class="bottom-nav-icon" aria-hidden="true">💌</span>
       <span class="bottom-nav-label-urdu">خط</span>
@@ -515,6 +490,6 @@
     </a>
   </nav>
 
-  <script src="./app.js?v=4"></script>
+  <script src="./app.js?v=2026_v6"></script>
 </body>
 </html>

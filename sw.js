@@ -1,39 +1,21 @@
-// Service Worker for Parveen Banu's Sanctuary
-const CACHE_NAME = 'parveen-sanctuary-v5';
-const ASSETS = [
-  './',
-  './index.html',
-  './styles.css',
-  './app.js',
-  './manifest.json',
-  './assets/icon-192.png',
-  './assets/icon-512.png'
-];
-
-self.addEventListener('install', (e) => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS);
-    }).then(() => self.skipWaiting())
-  );
+// Self-destroying service worker: cleans up all caches and unregisters itself
+self.addEventListener('install', (event) => {
+  self.skipWaiting();
 });
 
-self.addEventListener('activate', (e) => {
-  e.waitUntil(
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
     caches.keys().then((keys) => {
-      return Promise.all(
-        keys.map((k) => {
-          if (k !== CACHE_NAME) return caches.delete(k);
-        })
-      );
-    }).then(() => self.clients.claim())
-  );
-});
-
-self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request).then((res) => {
-      return res || fetch(e.request);
+      return Promise.all(keys.map((key) => caches.delete(key)));
+    }).then(() => {
+      return self.clients.claim();
+    }).then(() => {
+      return self.registration.unregister();
     })
   );
+});
+
+self.addEventListener('fetch', (event) => {
+  // Always fetch fresh from network, bypassing cache
+  event.respondWith(fetch(event.request));
 });

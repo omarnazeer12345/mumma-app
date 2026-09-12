@@ -272,8 +272,8 @@ function updateTimeGreeting() {
     greetingUrdu.textContent = "دوپہر بخیر امی جان! اللہ تعالیٰ آپ کی ہر تھکن کو راحت میں بدل دے، ان شاء اللہ۔";
     greetingEng.textContent = "Good Afternoon Ammi Jaan! May Allah grant you rest and ease, in-sha-Allah.";
   } else if (hour >= 17 && hour < 21) {
-    greetingUrdu.textContent = "شام بخیر امی جان! چائے کا وقت ہے، ذرا سکھ کا سانس لیجیے، ان شاء اللہ۔";
-    greetingEng.textContent = "Good Evening Ammi Jaan! It's tea time, take a peaceful breath, in-sha-Allah.";
+    greetingUrdu.textContent = "شام بخیر امی جان! ذرا سکھ کا سانس لیجیے، اللہ آپ کو راحت عطا فرمائے، ان شاء اللہ۔";
+    greetingEng.textContent = "Good Evening Ammi Jaan! Take a peaceful breath, may Allah grant you ease, in-sha-Allah.";
   } else {
     greetingUrdu.textContent = "شب بخیر امی جان! اللہ آپ کو پرسکون نیند اور سلامتی عطا فرمائے، ان شاء اللہ۔";
     greetingEng.textContent = "Good Night Ammi Jaan! May Allah grant you peaceful sleep and comfort, in-sha-Allah.";
@@ -293,8 +293,8 @@ const moodResponses = {
     eng: "Masha'Allah Ammi Jaan! By Allah's will and grace, your smile is a great blessing for our home, in-sha-Allah. O Allah! Keep Parveen Banu smiling and in well-being always. Ameen, in-sha-Allah!"
   },
   tired: {
-    urdu: "امی جان، اب سب کام چھوڑ دیجیے اور آرام سے تکیہ لگا کر لیٹ جائیں۔ ایک گرم چائے کی چسکی لیں، ہم آپ کی خدمت کے لیے ہر وقت حاضر ہیں ان شاء اللہ۔ ☕",
-    eng: "Ammi Jaan, please leave all chores and lean back on a cozy pillow. Take a warm sip of tea. Your child is always at your service in-sha-Allah."
+    urdu: "امی جان، اب سب کام چھوڑ دیجیے اور آرام سے تکیہ لگا کر لیٹ جائیں۔ ہم آپ کی خدمت اور راحت کے لیے ہر وقت حاضر ہیں ان شاء اللہ۔ 🛋️",
+    eng: "Ammi Jaan, please leave all chores and lean back on a cozy pillow. Your child is always at your service in-sha-Allah."
   },
   sad: {
     urdu: "امی جان، اللہ کی رضا کی خاطر اپنے اس بچے کو معاف کر دیجیے۔ آپ کے دل کا ملال ہم سے نہیں دیکھا جاتا۔ ہم دل سے معافی مانگتے ہیں اور آپ کے گلے لگتے ہیں۔ اللہ آپ کے دل کو اطمینان عطا فرمائے، پلیز مسکرا دیجیے ان شاء اللہ۔ 💖",
@@ -324,65 +324,6 @@ moodBtns.forEach(btn => {
     }
   });
 });
-
-// --- 5. AMMI'S TEA CORNER (Bilingual & Tawheed-aligned) ---
-const chaiThoughts = [
-  {
-    urdu: "امی جان، گرم چائے کا گھونٹ لیں اور سکون فرمائیں۔ آپ کا یہ بچہ آپ کی خدمت کے لیے ہر وقت حاضر ہے ان شاء اللہ۔",
-    eng: "Ammi Jaan, take a warm sip of tea and relax. Your child is always at your service in-sha-Allah."
-  },
-  {
-    urdu: "امی جان! اللہ کے فضل سے آپ کے پیار بھرے ہاتھوں کی بنی چائے میں جو برکت ہے، وہ کہیں اور نہیں مل سکتی ان شاء اللہ۔",
-    eng: "Ammi Jaan! By Allah's grace, the barakah and comfort in the tea from your loving hands is unmatched, in-sha-Allah."
-  },
-  {
-    urdu: "ایک گرم چائے کا گھونٹ لیں، گہری سانس لیں اور اللہ پر بھروسہ کر کے تمام فکریں چھوڑ دیں۔ اللہ کے فضل سے آپ ہمارے دل کا سکھ ہیں ان شاء اللہ۔",
-    eng: "Take a warm sip of tea, take a deep breath, and leave all worries to Allah. By Allah's will, you are a comfort to our hearts, in-sha-Allah."
-  },
-  {
-    urdu: "چائے کی یہ گرمی اس شفقت کی یاد دلاتی ہے جس کے ذریعے اللہ نے بچپن سے لے کر آج تک ہمیں پالا اور سنبھالا، الحمدللہ و ان شاء اللہ۔",
-    eng: "The warmth of this tea reminds me of the maternal care through which Allah nurtured us, Alhamdulillah and in-sha-Allah."
-  },
-  {
-    urdu: "جب بھی آپ مسکراتی ہیں، اللہ کے فضل اور رحمت سے ہر طرف خیر و برکت محسوس ہوتی ہے ان شاء اللہ۔",
-    eng: "Whenever you smile, by Allah's grace and mercy goodness is felt all around, in-sha-Allah."
-  },
-  {
-    urdu: "امی جان، اگر کبھی میں نے چائے پیتے ہوئے آپ کی طرف توجہ نہ دی ہو تو مجھے معاف کیجیے گا۔ اللہ کی رضا کی خاطر میرا دل ہمیشہ آپ کی خدمت میں حاضر ہے ان شاء اللہ۔",
-    eng: "Ammi Jaan, if I was ever distracted, please forgive me. For Allah's pleasure, my heart is always at your service, in-sha-Allah."
-  }
-];
-
-let currentChaiIndex = 0;
-const teacupWrap = document.getElementById('teacup-interactive');
-const chaiUrduElem = document.getElementById('chai-urdu-text');
-const chaiEngElem = document.getElementById('chai-eng-text');
-const btnSipTea = document.getElementById('btn-sip-tea');
-
-function rotateChaiThought() {
-  soundEngine.playSoftChime();
-  if (navigator.vibrate) navigator.vibrate(35);
-
-  teacupWrap.style.transform = 'scale(0.92) rotate(-5deg)';
-  setTimeout(() => {
-    teacupWrap.style.transform = '';
-  }, 220);
-
-  currentChaiIndex = (currentChaiIndex + 1) % chaiThoughts.length;
-  
-  chaiUrduElem.style.opacity = '0';
-  chaiEngElem.style.opacity = '0';
-  
-  setTimeout(() => {
-    chaiUrduElem.textContent = chaiThoughts[currentChaiIndex].urdu;
-    chaiEngElem.textContent = chaiThoughts[currentChaiIndex].eng;
-    chaiUrduElem.style.opacity = '1';
-    chaiEngElem.style.opacity = '1';
-  }, 250);
-}
-
-teacupWrap.addEventListener('click', rotateChaiThought);
-btnSipTea.addEventListener('click', rotateChaiThought);
 
 // --- 6. DIGITAL WARM HUG & PETALS ANIMATION ---
 const btnHug = document.getElementById('btn-give-hug');
@@ -478,8 +419,8 @@ const flowersData = [
     eng: "4. Your loving lap — which Allah made a place of peace and comfort for us, in-sha-Allah."
   },
   {
-    urdu: "۵. آپ کے ہاتھوں کی بنی چائے — جس میں اللہ تعالیٰ نے برکت اور مٹھاس رکھی ہے ان شاء اللہ۔",
-    eng: "5. The tea from your hands — in which Allah placed barakah and maternal kindness, in-sha-Allah."
+    urdu: "۵. آپ کے شفقت بھرے ہاتھ — جن کے لمس میں اللہ تعالیٰ نے برکت اور سکون رکھا ہے ان شاء اللہ۔",
+    eng: "5. Your gentle, caring hands — in whose touch Allah placed barakah and comfort, in-sha-Allah."
   },
   {
     urdu: "۶. آپ کا بے پناہ صبر اور قربانیاں — جن کا بہترین اور مکمل اجر صرف اللہ تعالیٰ ہی عطا کرے گا ان شاء اللہ۔",
@@ -494,8 +435,8 @@ const flowersData = [
     eng: "8. Your gentle guidance — in which Allah placed goodness and wisdom for us, in-sha-Allah."
   },
   {
-    urdu: "۹. آپ کی موجودگی کی برکت — جس عظیم نعمت کے لیے ہم ہمیشہ اللہ تعالیٰ کے شکر گزار ہیں ان شاء اللہ۔",
-    eng: "9. The blessing of your presence — for which we are eternally grateful to Allah, in-sha-Allah."
+    urdu: "۹. وہ رحمت اور شفقت — جو اللہ سبحانہ و تعالیٰ نے آپ کے دل میں رکھی ہے ان شاء اللہ۔",
+    eng: "9. The profound rahma (mercy) and tenderness that Allah (S.W.T) placed in your heart, in-sha-Allah."
   },
   {
     urdu: "۱۰. آپ، جن کے قدموں تلے اللہ تعالیٰ نے اپنے فضل و کرم سے جنت کی بشارت رکھی ہے ان شاء اللہ۔",
@@ -767,9 +708,18 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// --- 14. SERVICE WORKER REGISTRATION (PWA Offline) ---
+// --- 14. FRESH CACHE CONTROL & SERVICE WORKER PURGE ---
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    for (let registration of registrations) {
+      registration.unregister();
+    }
+  });
+}
+if ('caches' in window) {
+  caches.keys().then((names) => {
+    for (let name of names) {
+      caches.delete(name);
+    }
   });
 }
