@@ -266,17 +266,17 @@ function updateTimeGreeting() {
   if (!greetingUrdu || !greetingEng) return;
 
   if (hour >= 4 && hour < 12) {
-    greetingUrdu.textContent = "صبح بخیر امی جان! اللہ آپ کا دن نور اور عافیت سے بھر دے۔";
-    greetingEng.textContent = "Good Morning Ammi Jaan! May Allah fill your day with divine light and ease.";
+    greetingUrdu.textContent = "صبح بخیر امی جان! اللہ آپ کے دن کو نور، برکت اور عافیت سے بھر دے، ان شاء اللہ۔";
+    greetingEng.textContent = "Good Morning Ammi Jaan! May Allah fill your day with light and ease, in-sha-Allah.";
   } else if (hour >= 12 && hour < 17) {
-    greetingUrdu.textContent = "دوپہر بخیر امی جان! اللہ آپ کی ہر تھکن کو راحت میں بدل دے۔";
-    greetingEng.textContent = "Good Afternoon Ammi Jaan! May Allah replace every tiredness with deep relief.";
+    greetingUrdu.textContent = "دوپہر بخیر امی جان! اللہ تعالیٰ آپ کی ہر تھکن کو راحت میں بدل دے، ان شاء اللہ۔";
+    greetingEng.textContent = "Good Afternoon Ammi Jaan! May Allah grant you rest and ease, in-sha-Allah.";
   } else if (hour >= 17 && hour < 21) {
-    greetingUrdu.textContent = "شام بخیر امی جان! چائے کا وقت ہے، ذرا سکھ کا سانس لیجیے۔";
-    greetingEng.textContent = "Good Evening Ammi Jaan! It's tea time, take a peaceful breath and rest.";
+    greetingUrdu.textContent = "شام بخیر امی جان! چائے کا وقت ہے، ذرا سکھ کا سانس لیجیے، ان شاء اللہ۔";
+    greetingEng.textContent = "Good Evening Ammi Jaan! It's tea time, take a peaceful breath, in-sha-Allah.";
   } else {
-    greetingUrdu.textContent = "شب بخیر امی جان! اللہ آپ کو پرسکون نیند اور سکون عطا فرمائے۔";
-    greetingEng.textContent = "Good Night Ammi Jaan! May Allah grant you peaceful sleep and tranquil dreams.";
+    greetingUrdu.textContent = "شب بخیر امی جان! اللہ آپ کو پرسکون نیند اور سلامتی عطا فرمائے، ان شاء اللہ۔";
+    greetingEng.textContent = "Good Night Ammi Jaan! May Allah grant you peaceful sleep and comfort, in-sha-Allah.";
   }
 }
 updateTimeGreeting();
@@ -289,16 +289,16 @@ const moodResponseEng = document.getElementById('mood-response-eng');
 
 const moodResponses = {
   happy: {
-    urdu: "ماشاءاللہ امی جان! آپ کی مسکراہٹ ہی ہمارے گھر کی سب سے بڑی دولت ہے۔ یا اللہ! پروین بانو کو ہمیشہ مسکراتا اور ہنستا رکھنا۔ آمین! 🌸",
-    eng: "Masha'Allah Ammi Jaan! Your smile is the greatest wealth of our home. O Allah! Keep Parveen Banu smiling and joyful always. Ameen!"
+    urdu: "ماشاءاللہ امی جان! اللہ تعالیٰ کے فضل و کرم سے آپ کی مسکراہٹ ہمارے گھر کی بڑی نعمت ہے ان شاء اللہ۔ یا اللہ! پروین بانو کو ہمیشہ مسکراتا اور عافیت میں رکھنا۔ آمین، ان شاء اللہ! 🌸",
+    eng: "Masha'Allah Ammi Jaan! By Allah's will and grace, your smile is a great blessing for our home, in-sha-Allah. O Allah! Keep Parveen Banu smiling and in well-being always. Ameen, in-sha-Allah!"
   },
   tired: {
-    urdu: "امی جان، اب سب کام چھوڑ دیجیے اور آرام سے تکیہ لگا کر لیٹ جائیں۔ ایک گرم چائے کی چسکی لیں، آپ کے اس بچے کی جان آپ پر قربان، ہم آپ کی خدمت کے لیے ہر وقت حاضر ہیں ان شاء اللہ۔ ☕",
+    urdu: "امی جان، اب سب کام چھوڑ دیجیے اور آرام سے تکیہ لگا کر لیٹ جائیں۔ ایک گرم چائے کی چسکی لیں، ہم آپ کی خدمت کے لیے ہر وقت حاضر ہیں ان شاء اللہ۔ ☕",
     eng: "Ammi Jaan, please leave all chores and lean back on a cozy pillow. Take a warm sip of tea. Your child is always at your service in-sha-Allah."
   },
   sad: {
-    urdu: "امی جان، اپنے اس بچے کو معاف کر دیجیے۔ آپ کی آنکھوں کا ایک آنسو اور دل کا ملال ہمارے لیے ناقابلِ برداشت ہے۔ ہم دل سے آپ سے معافی مانگتے ہیں اور آپ کے گلے لگتے ہیں۔ پلیز مسکرا دیجیے۔ 💖",
-    eng: "Ammi Jaan, please forgive your child. Even a single tear or sorrow in your heart is unbearable for us. We hug you tightly in our hearts. Please smile for us. 💖"
+    urdu: "امی جان، اللہ کی رضا کی خاطر اپنے اس بچے کو معاف کر دیجیے۔ آپ کے دل کا ملال ہم سے نہیں دیکھا جاتا۔ ہم دل سے معافی مانگتے ہیں اور آپ کے گلے لگتے ہیں۔ اللہ آپ کے دل کو اطمینان عطا فرمائے، پلیز مسکرا دیجیے ان شاء اللہ۔ 💖",
+    eng: "Ammi Jaan, for the sake of Allah please forgive your child. We seek your pardon and hug you tightly in our hearts. May Allah grant peace to your heart. Please smile, in-sha-Allah. 💖"
   }
 };
 
@@ -325,31 +325,31 @@ moodBtns.forEach(btn => {
   });
 });
 
-// --- 5. AMMI'S TEA CORNER (Bilingual) ---
+// --- 5. AMMI'S TEA CORNER (Bilingual & Tawheed-aligned) ---
 const chaiThoughts = [
   {
     urdu: "امی جان، گرم چائے کا گھونٹ لیں اور سکون فرمائیں۔ آپ کا یہ بچہ آپ کی خدمت کے لیے ہر وقت حاضر ہے ان شاء اللہ۔",
     eng: "Ammi Jaan, take a warm sip of tea and relax. Your child is always at your service in-sha-Allah."
   },
   {
-    urdu: "امی جان! دنیا کا کوئی بھی شیف اتنی لذیذ اور پرسکون چائے نہیں بنا سکتا جتنی آپ کے پیار بھرے ہاتھوں کی ہوتی ہے۔",
-    eng: "Ammi Jaan! No chef in the world can brew tea as soothing and delicious as the one made by your loving hands."
+    urdu: "امی جان! اللہ کے فضل سے آپ کے پیار بھرے ہاتھوں کی بنی چائے میں جو برکت ہے، وہ کہیں اور نہیں مل سکتی ان شاء اللہ۔",
+    eng: "Ammi Jaan! By Allah's grace, the barakah and comfort in the tea from your loving hands is unmatched, in-sha-Allah."
   },
   {
-    urdu: "ایک گرم چائے کا گھونٹ لیں، گہری سانس لیں اور دنیا کی ہر پریشانی کو ایک طرف رکھ دیں۔ آپ ہمارے دل کا سکھ ہیں۔",
-    eng: "Take a warm sip of tea, take a deep breath, and set aside every worry. You are the peace of our hearts."
+    urdu: "ایک گرم چائے کا گھونٹ لیں، گہری سانس لیں اور اللہ پر بھروسہ کر کے تمام فکریں چھوڑ دیں۔ اللہ کے فضل سے آپ ہمارے دل کا سکھ ہیں ان شاء اللہ۔",
+    eng: "Take a warm sip of tea, take a deep breath, and leave all worries to Allah. By Allah's will, you are a comfort to our hearts, in-sha-Allah."
   },
   {
-    urdu: "چائے کی یہ گرمی آپ کی اس ممتا کی یاد دلاتی ہے جس نے بچپن سے لے کر آج تک ہمیں سرد موسموں اور دکھوں سے محفوظ رکھا۔",
-    eng: "The warmth of this tea reminds me of your maternal shelter that protected us from every chill and sorrow."
+    urdu: "چائے کی یہ گرمی اس شفقت کی یاد دلاتی ہے جس کے ذریعے اللہ نے بچپن سے لے کر آج تک ہمیں پالا اور سنبھالا، الحمدللہ و ان شاء اللہ۔",
+    eng: "The warmth of this tea reminds me of the maternal care through which Allah nurtured us, Alhamdulillah and in-sha-Allah."
   },
   {
-    urdu: "جب بھی آپ مسکراتی ہیں، لگتا ہے کہ دنیا کی سب سے میٹھی چائے میں الائچی اور زعفران کی خوشبو گھل گئی ہو۔",
-    eng: "Whenever you smile, it feels like cardamom and saffron have scented the sweetest cup of tea in the world."
+    urdu: "جب بھی آپ مسکراتی ہیں، اللہ کے فضل اور رحمت سے ہر طرف خیر و برکت محسوس ہوتی ہے ان شاء اللہ۔",
+    eng: "Whenever you smile, by Allah's grace and mercy goodness is felt all around, in-sha-Allah."
   },
   {
-    urdu: "امی جان، اگر کبھی میں نے چائے پیتے ہوئے آپ کی طرف توجہ نہ دی ہو تو مجھے معاف کیجیے گا۔ میرا دل ہمیشہ صرف آپ کے لیے ہے۔",
-    eng: "Ammi Jaan, if I was ever distracted and didn't give you my full attention, please forgive me. My heart is always yours."
+    urdu: "امی جان، اگر کبھی میں نے چائے پیتے ہوئے آپ کی طرف توجہ نہ دی ہو تو مجھے معاف کیجیے گا۔ اللہ کی رضا کی خاطر میرا دل ہمیشہ آپ کی خدمت میں حاضر ہے ان شاء اللہ۔",
+    eng: "Ammi Jaan, if I was ever distracted, please forgive me. For Allah's pleasure, my heart is always at your service, in-sha-Allah."
   }
 ];
 
@@ -459,47 +459,47 @@ if (btnCloseLetter) {
   btnCloseLetter.addEventListener('click', () => letterDialog.close());
 }
 
-// --- 8. BOUQUET OF 10 REASONS (Bilingual) ---
+// --- 8. BOUQUET OF 10 REASONS (Bilingual & Tawheed-aligned) ---
 const flowersData = [
   {
-    urdu: "۱. آپ کا نرم اور معاف کرنے والا دل — جو ہر غلطی کو پیار میں بدل دیتا ہے۔",
-    eng: "1. Your soft and forgiving heart — which turns every mistake into love."
+    urdu: "۱. آپ کا نرم اور معاف کرنے والا دل — جسے اللہ تعالیٰ نے شفقت اور محبت سے نوازا ہے ان شاء اللہ۔",
+    eng: "1. Your soft and forgiving heart — which Allah blessed with mercy and kindness, in-sha-Allah."
   },
   {
-    urdu: "۲. آپ کی وہ راتوں کی خاموش دعائیں — جو ہر مشکل میں میری ڈھال بنتی ہیں۔",
-    eng: "2. Your quiet late-night prayers — that act as my shield in every hardship."
+    urdu: "۲. آپ کی وہ راتوں کی خاموش دعائیں — جنہیں اللہ کے حکم اور فضل سے میری حفاظت کا ذریعہ بنایا گیا ہے ان شاء اللہ۔",
+    eng: "2. Your quiet late-night prayers — which by Allah's will and permission shield me, in-sha-Allah."
   },
   {
-    urdu: "۳. آپ کی میٹھی مسکراہٹ — جس سے ہمارا پورا گھر مسرت اور روشنی سے بھر جاتا ہے۔",
-    eng: "3. Your sweet smile — which fills our entire home with joy and light."
+    urdu: "۳. آپ کی میٹھی مسکراہٹ — جس کے ذریعے اللہ تعالیٰ ہمارے گھر میں رونق اور خوشی پیدا کرتا ہے ان شاء اللہ۔",
+    eng: "3. Your sweet smile — through which Allah brings joy and warmth into our home, in-sha-Allah."
   },
   {
-    urdu: "۴. آپ کی محبت بھری گود — جو دنیا کا سب سے زیادہ پرامن اور محفوظ ٹھکانہ ہے۔",
-    eng: "4. Your loving lap — the most peaceful and safe haven in the entire world."
+    urdu: "۴. آپ کی محبت بھری گود — جسے اللہ تعالیٰ نے ہمارے لیے امن اور عافیت کا ٹھکانہ بنایا ہے ان شاء اللہ۔",
+    eng: "4. Your loving lap — which Allah made a place of peace and comfort for us, in-sha-Allah."
   },
   {
-    urdu: "۵. آپ کے ہاتھوں کی بنی چائے — جس میں آپ کی خالص ممتا اور شفقت کا ذائقہ ہے۔",
-    eng: "5. The tea from your hands — carrying the pure taste of maternal kindness."
+    urdu: "۵. آپ کے ہاتھوں کی بنی چائے — جس میں اللہ تعالیٰ نے برکت اور مٹھاس رکھی ہے ان شاء اللہ۔",
+    eng: "5. The tea from your hands — in which Allah placed barakah and maternal kindness, in-sha-Allah."
   },
   {
-    urdu: "۶. آپ کا بے پناہ صبر اور قربانیاں — جو آپ نے ہم سب کی خوشیوں کے لیے دیں۔",
-    eng: "6. Your boundless patience and sacrifices — made selflessly for all of our happiness."
+    urdu: "۶. آپ کا بے پناہ صبر اور قربانیاں — جن کا بہترین اور مکمل اجر صرف اللہ تعالیٰ ہی عطا کرے گا ان شاء اللہ۔",
+    eng: "6. Your boundless patience and sacrifices — whose ultimate reward lies with Allah alone, in-sha-Allah."
   },
   {
-    urdu: "۷. جب بھی میں بیمار ہوا، آپ کا رات بھر جاگنا اور سر پر پیار سے ہاتھ پھیرنا۔",
-    eng: "7. Whenever I fell ill, your sleepless nights and gentle hand stroking my forehead."
+    urdu: "۷. جب بھی میں بیمار ہوا، آپ کا رات بھر جاگنا اور رو رو کر اللہ سے میری شفا مانگنا ان شاء اللہ۔",
+    eng: "7. Whenever I fell ill, your sleepless nights begging Allah for my cure and well-being, in-sha-Allah."
   },
   {
-    urdu: "۸. آپ کی وہ نرم نصیحتیں — جن کی قدر مجھے ہر گزرتے دن کے ساتھ بڑھتی جا رہی ہے۔",
-    eng: "8. Your gentle guidance — whose precious worth grows deeper with each passing day."
+    urdu: "۸. آپ کی وہ نرم نصیحتیں — جن کے ذریعے اللہ تعالیٰ نے ہمارے لیے رہنمائی اور بھلائی رکھی ہے ان شاء اللہ۔",
+    eng: "8. Your gentle guidance — in which Allah placed goodness and wisdom for us, in-sha-Allah."
   },
   {
-    urdu: "۹. آپ کی موجودگی کا احساس — جو مجھے اکیلا پن اور خوف کبھی محسوس نہیں ہونے دیتا۔",
-    eng: "9. The comfort of your presence — that never lets loneliness or fear touch me."
+    urdu: "۹. آپ کی موجودگی کی برکت — جس عظیم نعمت کے لیے ہم ہمیشہ اللہ تعالیٰ کے شکر گزار ہیں ان شاء اللہ۔",
+    eng: "9. The blessing of your presence — for which we are eternally grateful to Allah, in-sha-Allah."
   },
   {
-    urdu: "۱۰. آپ، جن کے قدموں تلے میرے اللہ نے میری جنت رکھ دی ہے۔",
-    eng: "10. You, beneath whose feet my Lord has placed my Paradise."
+    urdu: "۱۰. آپ، جن کے قدموں تلے اللہ تعالیٰ نے اپنے فضل و کرم سے جنت کی بشارت رکھی ہے ان شاء اللہ۔",
+    eng: "10. You, beneath whose feet Allah by His immense grace has promised Paradise, in-sha-Allah."
   }
 ];
 
