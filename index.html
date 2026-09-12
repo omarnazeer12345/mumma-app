@@ -12,7 +12,7 @@
   <meta name="apple-mobile-web-app-title" content="امی کا گوشہ">
   <title>پروین بانو کا گوشۂ سکون | Parveen Banu's Sanctuary of Peace</title>
   
-  <link rel="stylesheet" href="./styles.css?v=2026_v12">
+  <link rel="stylesheet" href="./styles.css?v=2026_v14_no_dua_inshallah">
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%22100%22%20height=%22100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
   <script>
@@ -27,6 +27,15 @@
         for (var k of keys) { caches.delete(k); }
       });
     }
+    // Auto-reload stale cache on phone
+    var APP_BUILD_ID = '2026_v14_no_dua_inshallah';
+    if (localStorage.getItem('app_build_version') !== APP_BUILD_ID) {
+      localStorage.setItem('app_build_version', APP_BUILD_ID);
+      window.location.reload(true);
+    }
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) window.location.reload(true);
+    });
   </script>
 </head>
 <body>
@@ -492,6 +501,6 @@
     </a>
   </nav>
 
-  <script src="./app.js?v=2026_v12"></script>
+  <script src="./app.js?v=2026_v14_no_dua_inshallah"></script>
 </body>
 </html>
