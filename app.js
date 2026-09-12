@@ -435,8 +435,8 @@ const flowersData = [
     eng: "8. Your gentle guidance — in which Allah placed goodness and wisdom for us, in-sha-Allah."
   },
   {
-    urdu: "۹. وہ رحمت اور شفقت — جو اللہ سبحانہ و تعالیٰ نے آپ کے دل میں رکھی ہے ان شاء اللہ۔",
-    eng: "9. The profound rahma (mercy) and tenderness that Allah (S.W.T) placed in your heart, in-sha-Allah."
+    urdu: "۹. آپ کی موجودگی کی برکت — جس عظیم نعمت کے لیے ہم ہمیشہ اللہ تعالیٰ کے شکر گزار ہیں ان شاء اللہ۔",
+    eng: "9. The blessing of your presence — for which we are eternally grateful to Allah, in-sha-Allah."
   },
   {
     urdu: "۱۰. آپ، جن کے قدموں تلے اللہ تعالیٰ نے اپنے فضل و کرم سے جنت کی بشارت رکھی ہے ان شاء اللہ۔",
