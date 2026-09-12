@@ -411,8 +411,8 @@ const flowersData = [
     eng: "2. Your quiet late-night prayers — which by Allah's will and grace shield and protect me."
   },
   {
-    urdu: "۳. آپ کی میٹھی مسکراہٹ — جس کے ذریعے اللہ تعالیٰ ہمارے گھر میں رونق اور خوشی پیدا کرتا ہے۔",
-    eng: "3. Your sweet smile — through which Allah brings joy and warmth into our home."
+    urdu: "۳. آپ کے ہاتھوں کا پیار بھرا کھانا — جس میں اللہ تعالیٰ نے ہمارے لیے برکت اور ذائقہ رکھا ہے۔",
+    eng: "3. The warmth of food made by your hands — in which Allah placed special barakah and love for us."
   },
   {
     urdu: "۴. آپ کی محبت بھری گود — جسے اللہ تعالیٰ نے ہمارے لیے امن اور عافیت کا ٹھکانہ بنایا ہے۔",
