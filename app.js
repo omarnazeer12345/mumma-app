@@ -293,8 +293,8 @@ const moodResponses = {
     eng: "Masha'Allah Ammi Jaan! By Allah's will and grace, your smile is a great blessing for our home, Alhamdulillah. O Allah! Keep Parveen Banu smiling and in well-being always. Ameen! 🌸"
   },
   tired: {
-    urdu: "امی جان، اب سب کام چھوڑ دیجیے اور آرام سے تکیہ لگا کر لیٹ جائیں۔ ہم آپ کی خدمت اور راحت کے لیے ہر وقت حاضر ہیں ان شاء اللہ۔ 🛋️",
-    eng: "Ammi Jaan, please leave all chores and lean back on a cozy pillow. Your child is always at your service in-sha-Allah."
+    urdu: "امی جان، اب سب کام چھوڑ دیجیے اور آرام سے تکیہ لگا کر لیٹ جائیں۔ ہم آپ کی خدمت اور راحت کے لیے ہر وقت حاضر ہیں۔ 🛋️",
+    eng: "Ammi Jaan, please leave all chores and lean back on a cozy pillow. Your child is always at your service."
   },
   sad: {
     urdu: "امی جان، اللہ کی رضا کی خاطر اپنے اس بچے کو معاف کر دیجیے۔ آپ کے دل کا ملال ہم سے نہیں دیکھا جاتا۔ ہم دل سے معافی مانگتے ہیں اور آپ کے گلے لگتے ہیں۔ اللہ تعالیٰ آپ کے دل کو اطمینان و سکون عطا فرمائے، آمین۔ پلیز مسکرا دیجیے۔ 💖",
@@ -403,24 +403,24 @@ if (btnCloseLetter) {
 // --- 8. BOUQUET OF 10 REASONS (Bilingual & Tawheed-aligned) ---
 const flowersData = [
   {
-    urdu: "۱. آپ کا نرم اور معاف کرنے والا دل — جسے اللہ تعالیٰ نے شفقت اور محبت سے نوازا ہے ان شاء اللہ۔",
-    eng: "1. Your soft and forgiving heart — which Allah blessed with mercy and kindness, in-sha-Allah."
+    urdu: "۱. آپ کا نرم اور معاف کرنے والا دل — جسے اللہ تعالیٰ نے شفقت اور محبت سے نوازا ہے۔",
+    eng: "1. Your soft and forgiving heart — which Allah blessed with mercy and kindness."
   },
   {
     urdu: "۲. آپ کی وہ راتوں کی خاموش دعائیں — جنہیں اللہ تعالیٰ نے اپنے فضل و کرم سے میری حفاظت کا ذریعہ بنایا ہے۔",
     eng: "2. Your quiet late-night prayers — which by Allah's will and grace shield and protect me."
   },
   {
-    urdu: "۳. آپ کی میٹھی مسکراہٹ — جس کے ذریعے اللہ تعالیٰ ہمارے گھر میں رونق اور خوشی پیدا کرتا ہے ان شاء اللہ۔",
-    eng: "3. Your sweet smile — through which Allah brings joy and warmth into our home, in-sha-Allah."
+    urdu: "۳. آپ کی میٹھی مسکراہٹ — جس کے ذریعے اللہ تعالیٰ ہمارے گھر میں رونق اور خوشی پیدا کرتا ہے۔",
+    eng: "3. Your sweet smile — through which Allah brings joy and warmth into our home."
   },
   {
-    urdu: "۴. آپ کی محبت بھری گود — جسے اللہ تعالیٰ نے ہمارے لیے امن اور عافیت کا ٹھکانہ بنایا ہے ان شاء اللہ۔",
-    eng: "4. Your loving lap — which Allah made a place of peace and comfort for us, in-sha-Allah."
+    urdu: "۴. آپ کی محبت بھری گود — جسے اللہ تعالیٰ نے ہمارے لیے امن اور عافیت کا ٹھکانہ بنایا ہے۔",
+    eng: "4. Your loving lap — which Allah made a place of peace and comfort for us."
   },
   {
-    urdu: "۵. آپ کے شفقت بھرے ہاتھ — جن کے لمس میں اللہ تعالیٰ نے برکت اور سکون رکھا ہے ان شاء اللہ۔",
-    eng: "5. Your gentle, caring hands — in whose touch Allah placed barakah and comfort, in-sha-Allah."
+    urdu: "۵. آپ کے شفقت بھرے ہاتھ — جن کے لمس میں اللہ تعالیٰ نے برکت اور سکون رکھا ہے۔",
+    eng: "5. Your gentle, caring hands — in whose touch Allah placed barakah and comfort."
   },
   {
     urdu: "۶. آپ کا بے پناہ صبر اور قربانیاں — اللہ تعالیٰ آپ کو ان کا بہترین اور کامل ترین اجر عطا فرمائے۔ آمین۔",
@@ -431,16 +431,16 @@ const flowersData = [
     eng: "7. Whenever I fell ill, your sleepless nights beseeching Allah for my healing and well-being."
   },
   {
-    urdu: "۸. آپ کی وہ نرم نصیحتیں — جن کے ذریعے اللہ تعالیٰ نے ہمارے لیے رہنمائی اور بھلائی رکھی ہے ان شاء اللہ۔",
-    eng: "8. Your gentle guidance — in which Allah placed goodness and wisdom for us, in-sha-Allah."
+    urdu: "۸. آپ کی وہ نرم نصیحتیں — جن کے ذریعے اللہ تعالیٰ نے ہمارے لیے رہنمائی اور بھلائی رکھی ہے۔",
+    eng: "8. Your gentle guidance — in which Allah placed goodness and wisdom for us."
   },
   {
-    urdu: "۹. آپ کی موجودگی کی برکت — جس عظیم نعمت کے لیے ہم ہمیشہ اللہ تعالیٰ کے شکر گزار ہیں ان شاء اللہ۔",
-    eng: "9. The blessing of your presence — for which we are eternally grateful to Allah, in-sha-Allah."
+    urdu: "۹. آپ کی موجودگی کی برکت — جس عظیم نعمت کے لیے ہم ہمیشہ اللہ تعالیٰ کے شکر گزار رہیں گے ان شاء اللہ۔",
+    eng: "9. The blessing of your presence — for which we will always remain grateful to Allah, in-sha-Allah."
   },
   {
-    urdu: "۱۰. آپ، جن کے قدموں تلے اللہ تعالیٰ نے اپنے فضل و کرم سے جنت کی بشارت رکھی ہے ان شاء اللہ۔",
-    eng: "10. You, beneath whose feet Allah by His immense grace has promised Paradise, in-sha-Allah."
+    urdu: "۱۰. آپ، جن کے قدموں تلے اللہ تعالیٰ نے اپنے فضل و کرم سے جنت کی بشارت رکھی ہے۔",
+    eng: "10. You, beneath whose feet Allah by His immense grace has promised Paradise."
   }
 ];
 
