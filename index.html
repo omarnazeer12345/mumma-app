@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#FAF7F2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="امی کا گوشہ">
+  <title>پروین بانو کا گوشۂ سکون | Parveen Banu's Sanctuary of Peace</title>
+  
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%22100%22%20height=%22100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+</head>
+<body>
+
+  <!-- Background Texture and Procedural Halal Rain Canvas -->
+  <div class="bg-pattern" aria-hidden="true"></div>
+  <canvas id="rain-canvas" aria-hidden="true"></canvas>
+  <div id="petals-layer" class="petals-layer" aria-hidden="true"></div>
+
+  <!-- Mobile Frame Container -->
+  <main class="mobile-app-container">
+
+    <!-- Top App Navigation & Serenity Controls -->
+    <header class="top-nav">
+      <div class="brand-badge">
+        <div class="brand-icon" aria-hidden="true">📿</div>
+        <div>
+          <div class="brand-title">گوشۂ سکون</div>
+          <div class="brand-sub">Ammi's Sanctuary</div>
+        </div>
+      </div>
+
+      <div class="top-controls">
+        <button id="btn-rain-toggle" class="btn-icon-pill" aria-label="Toggle soothing rain sound">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; line-height: 1.1;">
+            <span id="rain-status-urdu">🌧️ بارانِ رحمت</span>
+            <span id="rain-status-eng" style="font-size: 8px; opacity: 0.8;">Rain: Off</span>
+          </span>
+        </button>
+
+        <button id="btn-font-minus" class="btn-icon-pill" style="padding: 6px 8px;" aria-label="Decrease font size">A-</button>
+        <button id="btn-font-plus" class="btn-icon-pill" style="padding: 6px 8px;" aria-label="Increase font size">A+</button>
+      </div>
+    </header>
+
+    <!-- Rain Volume Drawer -->
+    <div id="rain-drawer" class="rain-control-drawer">
+      <div>
+        <div style="font-size: 11px; color: var(--text-dark); font-family: var(--font-urdu);">بارش کی آواز</div>
+        <div style="font-size: 9px; color: var(--text-muted);">Rain Volume</div>
+      </div>
+      <div class="rain-slider-wrap">
+        <span style="font-size: 13px;">🌧️</span>
+        <input type="range" id="rain-volume-slider" class="rain-slider" min="0.05" max="1" step="0.05" value="0.55" aria-label="Rain volume">
+      </div>
+    </div>
+
+    <!-- HERO SECTION: Welcome & Hug Ammi -->
+    <section id="sanctuary" class="sanctuary-card hero-card">
+      <div class="bismillah-art">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+      
+      <!-- Dynamic Time-aware Greeting (Bilingual) -->
+      <div id="time-greeting" class="time-greeting-badge">
+        <div id="time-greeting-urdu" class="time-greeting-urdu">صبح بخیر امی جان!</div>
+        <div id="time-greeting-eng" class="time-greeting-eng">Good morning Ammi Jaan!</div>
+      </div>
+
+      <h1 class="mother-title">السلام علیکم میری پیاری امی جان</h1>
+      <p class="mother-subtitle english-serif">Dedicated to Parveen Banu — The light and soul of our home</p>
+
+      <div class="quran-verse-pill">
+        <div class="verse-arabic">« رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا »</div>
+        <div class="verse-urdu">”اے میرے رب! ان دونوں پر رحم فرما جیسا کہ انہوں نے بچپن میں میری پرورش کی تھی“</div>
+        <div class="verse-eng">"My Lord, have mercy upon them as they brought me up when I was small."</div>
+        <div class="verse-ref">Surah Al-Isra (17:24)</div>
+      </div>
+
+      <div class="hug-action-area">
+        <button id="btn-give-hug" class="btn-hug" aria-label="Send a warm hug to Ammi">
+          <span class="heart-icon" aria-hidden="true">💖</span>
+          <span>امی جان کے لیے ایک پیار بھرا گلے</span>
+          <span class="btn-hug-eng-sub">(A warm loving hug for Ammi)</span>
+        </button>
+      </div>
+
+      <!-- Mood Check-in: آج امی جان کا دل کیسا ہے؟ -->
+      <div style="margin-top: 22px; padding-top: 16px; border-top: 1px dashed var(--gold-border);">
+        <p style="font-family: var(--font-urdu); font-size: 14px; color: var(--emerald-deep); font-weight: 600;">
+          آج میری پیاری امی کا دل کیسا محسوس کر رہا ہے؟
+        </p>
+        <p class="english-sub" style="margin-bottom: 8px;">How is my beloved mother feeling today?</p>
+
+        <div class="mood-buttons-grid">
+          <button class="mood-btn" data-mood="happy">
+            <span class="mood-emoji">🌸</span>
+            <span class="mood-label-urdu">الحمدللہ، خوش ہوں</span>
+            <span class="mood-sub-eng">Alhamdulillah, happy</span>
+          </button>
+          <button class="mood-btn" data-mood="tired">
+            <span class="mood-emoji">☕</span>
+            <span class="mood-label-urdu">تھکی ہوئی ہوں</span>
+            <span class="mood-sub-eng">Feeling tired</span>
+          </button>
+          <button class="mood-btn" data-mood="sad">
+            <span class="mood-emoji">🤍</span>
+            <span class="mood-label-urdu">دل تھوڑا اداس ہے</span>
+            <span class="mood-sub-eng">Heart feels a bit sad</span>
+          </button>
+        </div>
+
+        <div id="mood-response" class="mood-response-box">
+          <p id="mood-response-urdu" class="mood-response-urdu"></p>
+          <p id="mood-response-eng" class="mood-response-eng"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: CHAI NOOK (چائے کا وقت) -->
+    <section id="chai" class="sanctuary-card tea-container">
+      <div class="section-header" style="width: 100%;">
+        <span class="section-tag">☕ Warm Chai Nook</span>
+        <h2 class="section-urdu-title">چائے کا وقت اور پیار</h2>
+      </div>
+
+      <div id="teacup-interactive" class="teacup-visual-wrap" title="چائے کا گھونٹ لینے کے لیے ٹیپ کریں">
+        <div class="steam-group" aria-hidden="true">
+          <div class="steam-particle"></div>
+          <div class="steam-particle"></div>
+          <div class="steam-particle"></div>
+        </div>
+        <svg class="teacup-svg" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="50" cy="74" rx="42" ry="6" fill="#E8DFCE"/>
+          <ellipse cx="50" cy="72" rx="38" ry="5" fill="#FAF6EE" stroke="#C5A059" stroke-width="1.5"/>
+          <path d="M22 28C22 28 20 62 50 62C80 62 78 28 78 28H22Z" fill="#FFFDF8" stroke="#C5A059" stroke-width="2"/>
+          <ellipse cx="50" cy="28" rx="28" ry="7" fill="#8C4820"/>
+          <ellipse cx="50" cy="28" rx="24" ry="5" fill="#B87333"/>
+          <path d="M78 36C86 36 92 41 92 48C92 56 84 59 75 57" stroke="#C5A059" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M42 42C45 45 55 45 58 42" stroke="#D9828C" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="50" cy="48" r="2" fill="#D9828C"/>
+        </svg>
+      </div>
+
+      <div class="chai-thought-box">
+        <p id="chai-urdu-text" class="chai-urdu-quote">امی جان! دنیا کا کوئی بھی شیف اتنی لذیذ اور پرسکون چائے نہیں بنا سکتا جتنی آپ کے پیار بھرے ہاتھوں کی ہوتی ہے۔</p>
+        <p id="chai-eng-text" class="chai-eng-quote">Ammi Jaan! No chef in the world can brew tea as soothing and delicious as the one made by your loving hands.</p>
+      </div>
+
+      <button id="btn-sip-tea" class="btn-sip-tea">
+        <span>☕</span>
+        <span>چائے کا نیا پیغام کھولیں | Another Tea Note</span>
+      </button>
+    </section>
+
+    <!-- SECTION 2: HEARTFELT LETTER (خط برائے امی جان) -->
+    <section id="letter" class="sanctuary-card">
+      <div class="section-header">
+        <span class="section-tag">💌 From My Heart</span>
+        <h2 class="section-urdu-title">خط برائے امی جان</h2>
+      </div>
+
+      <div id="letter-cover" class="letter-cover-card">
+        <div class="wax-seal" aria-hidden="true">💌</div>
+        <h3 class="letter-invitation-title">پروین بانو کے نام ایک دل کا خط</h3>
+        <p style="font-size: 12px; color: var(--emerald-deep); font-weight: 500; margin-bottom: 4px;">A Heartfelt Letter for Parveen Banu</p>
+        <p class="letter-hint">
+          <span>✨</span>
+          <span>پڑھنے کے لیے ٹیپ کریں | Tap to Open & Read</span>
+          <span>✨</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: BOUQUET OF 10 (محبت کا گلدستہ) -->
+    <section id="bouquet" class="sanctuary-card">
+      <div class="section-header">
+        <span class="section-tag">🌸 10 Reasons of Love</span>
+        <h2 class="section-urdu-title">محبت کا گلدستہ</h2>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <span id="bouquet-status-badge" style="font-size: 12px; font-weight: 600; color: var(--rose-deep); font-family: var(--font-urdu);">۱ / ۱۰ پھول کھلا ہوا ہے</span>
+        <span style="font-size: 11px; color: var(--text-muted);">Tap buds to bloom</span>
+      </div>
+
+      <div class="bouquet-progress-bar-wrap">
+        <div id="bouquet-progress-bar" class="bouquet-progress-bar"></div>
+      </div>
+
+      <div class="flowers-grid">
+        <div class="flower-slot unlocked" data-index="0">🌸<span class="flower-number-badge">1</span></div>
+        <div class="flower-slot" data-index="1">🌱<span class="flower-number-badge">2</span></div>
+        <div class="flower-slot" data-index="2">🌱<span class="flower-number-badge">3</span></div>
+        <div class="flower-slot" data-index="3">🌱<span class="flower-number-badge">4</span></div>
+        <div class="flower-slot" data-index="4">🌱<span class="flower-number-badge">5</span></div>
+        <div class="flower-slot" data-index="5">🌱<span class="flower-number-badge">6</span></div>
+        <div class="flower-slot" data-index="6">🌱<span class="flower-number-badge">7</span></div>
+        <div class="flower-slot" data-index="7">🌱<span class="flower-number-badge">8</span></div>
+        <div class="flower-slot" data-index="8">🌱<span class="flower-number-badge">9</span></div>
+        <div class="flower-slot" data-index="9">🌱<span class="flower-number-badge">10</span></div>
+      </div>
+
+      <div class="flower-active-card">
+        <p id="flower-active-urdu" class="flower-active-text-urdu">۱. آپ کا نرم اور معاف کرنے والا دل — جو ہر غلطی کو پیار میں بدل دیتا ہے۔</p>
+        <p id="flower-active-eng" class="flower-active-text-eng">1. Your soft and forgiving heart — which turns every mistake into love.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 4: TACTILE PEARL TASBIH (سکون کی تسبیح) -->
+    <section id="tasbih" class="sanctuary-card tasbih-wrapper">
+      <div class="section-header" style="width: 100%;">
+        <span class="section-tag">📿 Heart Remembrance</span>
+        <h2 class="section-urdu-title">سکون کی تسبیح</h2>
+      </div>
+
+      <div class="dhikr-tabs" role="tablist">
+        <button class="dhikr-tab-pill active" role="tab">
+          <span>سُبْحَانَ اللَّهِ</span>
+          <span style="font-size: 8.5px; opacity: 0.85;">Glory to Allah</span>
+        </button>
+        <button class="dhikr-tab-pill" role="tab">
+          <span>الْحَمْدُ لِلَّهِ</span>
+          <span style="font-size: 8.5px; opacity: 0.85;">Praise to Allah</span>
+        </button>
+        <button class="dhikr-tab-pill" role="tab">
+          <span>اللَّهُ أَكْبَرُ</span>
+          <span style="font-size: 8.5px; opacity: 0.85;">Allah is Greatest</span>
+        </button>
+        <button class="dhikr-tab-pill" role="tab">
+          <span>أَسْتَغْفِرُ اللَّهَ</span>
+          <span style="font-size: 8.5px; opacity: 0.85;">Seek Forgiveness</span>
+        </button>
+        <button class="dhikr-tab-pill" role="tab">
+          <span>درود شریف</span>
+          <span style="font-size: 8.5px; opacity: 0.85;">Salawat</span>
+        </button>
+        <button class="dhikr-tab-pill" role="tab">
+          <span>لَا حَوْلَ</span>
+          <span style="font-size: 8.5px; opacity: 0.85;">La Hawla</span>
+        </button>
+      </div>
+
+      <div class="tasbih-counter-display">
+        <div id="current-dhikr-arabic" class="current-dhikr-arabic">سُبْحَانَ اللَّهِ</div>
+        <div id="current-dhikr-urdu" class="current-dhikr-urdu">اللہ ہر عیب اور خامی سے پاک ہے</div>
+        <div id="current-dhikr-eng" class="current-dhikr-eng">Glory be to Allah — free from all imperfection</div>
+      </div>
+
+      <button id="tasbih-circle-btn" class="bead-interactive-circle" aria-label="Count Tasbih bead">
+        <div class="bead-pearl-ring" aria-hidden="true"></div>
+        <span id="tasbih-count-display" class="count-number">0</span>
+        <span id="tasbih-target-label" class="count-target-label">Target / ہدف: 33</span>
+      </button>
+
+      <div class="tasbih-controls">
+        <button id="btn-reset-tasbih" class="btn-tasbih-action">
+          <span>🔄</span>
+          <span>دوبارہ گنتی (صفر کریں) | Reset</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SECTION 5: DAILY DUA JAR (روزانہ کی دعا کا ڈبہ) -->
+    <section id="duas" class="sanctuary-card dua-jar-card">
+      <div class="section-header">
+        <span class="section-tag">🤲 Duas for Parveen Banu</span>
+        <h2 class="section-urdu-title">امی کے لیے دعاؤں کا ڈبہ</h2>
+      </div>
+
+      <div id="crystal-jar-btn" class="crystal-jar-wrap" title="دعا نکالنے کے لیے ڈبے پر ٹیپ کریں">
+        <svg width="70" height="85" viewBox="0 0 70 85" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="20" y="5" width="30" height="8" rx="3" fill="#C5A059" stroke="#997736" stroke-width="1.5"/>
+          <path d="M12 20C12 18 16 15 22 15H48C54 15 58 18 58 20L62 72C62 77 56 80 48 80H22C14 80 8 77 8 72L12 20Z" fill="#F4EFE6" fill-opacity="0.6" stroke="#C5A059" stroke-width="2"/>
+          <circle cx="35" cy="45" r="14" fill="#EBF3EE" fill-opacity="0.8"/>
+          <path d="M30 45L34 49L41 41" stroke="#2D5A46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="dua-reveal-box">
+        <div id="dua-arabic-text" class="dua-arabic">رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا</div>
+        <div id="dua-urdu-text" class="dua-urdu">اے میرے پروردگار! میری امی جان پر اسی طرح رحم فرما جس طرح انہوں نے بچپن میں مجھے شفقت اور محبت سے پالا۔</div>
+        <div id="dua-eng-text" class="dua-eng">My Lord, have mercy upon my mother as she brought me up when I was small.</div>
+      </div>
+
+      <button id="btn-draw-dua" class="btn-draw-dua">
+        <span>✨</span>
+        <span>امی کے لیے ایک نئی دعا نکالیں | Draw Another Dua</span>
+      </button>
+    </section>
+
+    <!-- SECTION 6: MY SACRED PROMISES (امی سے سچے وعدے - Bilingual) -->
+    <section class="sanctuary-card">
+      <div class="section-header">
+        <span class="section-tag">🤝 Filial Devotion</span>
+        <h2 class="section-urdu-title">امی جان سے میرے پکے وعدے</h2>
+      </div>
+      <p class="english-sub" style="margin-bottom: 12px;">My sacred promises and commitments to Ammi</p>
+
+      <div class="promise-list">
+        <div class="promise-item checked">
+          <div class="promise-checkbox">✓</div>
+          <div class="promise-content">
+            <div class="promise-text-urdu">میں کبھی آپ کے سامنے اونچی آواز میں بات نہیں کروں گا/گی اور ہمیشہ ادب سے پیش آؤں گا۔</div>
+            <div class="promise-text-eng">I promise to never raise my voice before you and always speak with gentle reverence.</div>
+          </div>
+        </div>
+
+        <div class="promise-item checked">
+          <div class="promise-checkbox">✓</div>
+          <div class="promise-content">
+            <div class="promise-text-urdu">میں ہر نماز کے بعد اور ہر دعا میں آپ کی صحت، عافیت اور لمبی زندگی مانگوں گا۔</div>
+            <div class="promise-text-eng">I promise to pray for your good health, comfort, and blessed long life after every Salah.</div>
+          </div>
+        </div>
+
+        <div class="promise-item checked">
+          <div class="promise-checkbox">✓</div>
+          <div class="promise-content">
+            <div class="promise-text-urdu">اگر مجھ سے کوئی غلطی ہو جائے تو میں فورا معافی مانگوں گا/گی اور آپ کا دل نہیں دکھاؤں گا۔</div>
+            <div class="promise-text-eng">I promise to apologize immediately whenever I make a mistake and never leave your heart hurt.</div>
+          </div>
+        </div>
+
+        <div class="promise-item checked">
+          <div class="promise-checkbox">✓</div>
+          <div class="promise-content">
+            <div class="promise-text-urdu">میں آپ کی بات اور مشورے کو ہمیشہ سب سے زیادہ ترجیح اور عزت دوں گا۔</div>
+            <div class="promise-text-eng">I promise to honor your advice and words above everyone else's with true priority.</div>
+          </div>
+        </div>
+
+        <div class="promise-item checked">
+          <div class="promise-checkbox">✓</div>
+          <div class="promise-content">
+            <div class="promise-text-urdu">میں ہمیشہ کوشش کروں گا/گی کہ آپ کے چہرے پر خوشی اور مسکراہٹ بنی رہے۔</div>
+            <div class="promise-text-eng">I promise to do everything in my power to keep your sweet smile shining always.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: HADITH ON MOTHERS (ماں کا مقام و عظمت - Bilingual) -->
+    <section class="sanctuary-card" style="background: linear-gradient(145deg, #FFFFFF 0%, #F5FBF7 100%);">
+      <div class="section-header">
+        <span class="section-tag">📖 Mother in Islam</span>
+        <h2 class="section-urdu-title">ماں کا مقام و عظمت</h2>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 12px;">
+        <div class="quran-text" style="font-size: 21px; color: var(--emerald-deep); margin-bottom: 4px;">
+          « الْجَنَّةُ تَحْتَ أَقْدَامِ الأُمَّهَاتِ »
+        </div>
+        <div class="urdu-center" style="font-size: 15px; color: var(--emerald-medium); margin-bottom: 2px;">
+          ”جنت ماؤں کے قدموں تلے ہے“
+        </div>
+        <div class="english-serif" style="font-size: 12px; color: var(--text-muted); font-style: italic;">
+          "Paradise lies beneath the feet of mothers."
+        </div>
+        <p style="font-size: 10px; color: var(--text-light); margin-top: 4px;">(Sunan An-Nasa'i)</p>
+      </div>
+
+      <div style="border-top: 1px dashed var(--gold-border); padding-top: 12px; margin-top: 10px; text-align: right; direction: rtl;">
+        <p class="urdu-text" style="font-size: 14.5px; color: var(--text-dark); line-height: 2.2;">
+          ایک شخص نے رسول اللہ ﷺ سے پوچھا: ”یا رسول اللہ! میرے اچھے سلوک کا سب سے زیادہ حق دار کون ہے؟“ آپ ﷺ نے فرمایا: <strong style="color: var(--rose-deep);">”تمہاری ماں۔“</strong> انہوں نے پوچھا: ”پھر کون؟“ فرمایا: <strong style="color: var(--rose-deep);">”تمہاری ماں۔“</strong> انہوں نے پوچھا: ”پھر کون؟“ فرمایا: <strong style="color: var(--rose-deep);">”تمہاری ماں۔“</strong> چوتھی بار فرمایا: ”پھر تمہارا باپ۔“
+        </p>
+        <p class="english-sub" style="direction: ltr; text-align: left; margin-top: 8px; font-size: 12px;">
+          A man asked the Prophet ﷺ: "O Messenger of Allah, who among the people is most deserving of my good companionship?" He replied: <strong>"Your mother."</strong> The man asked: "Then who?" He replied: <strong>"Your mother."</strong> The man asked: "Then who?" He replied: <strong>"Your mother."</strong> The man asked: "Then who?" He replied: "Then your father." (Sahih Bukhari & Muslim)
+        </p>
+      </div>
+    </section>
+
+    <!-- Bottom Love Note Sign-off -->
+    <footer style="text-align: center; padding: 20px 10px 10px; color: var(--text-muted);">
+      <p class="urdu-center" style="font-size: 16px; color: var(--emerald-deep); margin-bottom: 4px;">
+        ہمیشہ آپ کا پیارا بچہ، دل کی گہرائیوں سے معذرت خواہ اور دعاؤں کا طلب گار۔
+      </p>
+      <p style="font-size: 12px; color: var(--gold-accent);">
+        Crafted with deep love, repentance, and prayers for Parveen Banu 🌸
+      </p>
+      <p style="font-size: 10px; color: var(--text-light); margin-top: 4px;">
+        Forever your child, seeking your smile and blessings.
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- MODAL 1: HUG DIALOG (Bilingual) -->
+  <dialog id="hug-dialog" class="hug-dialog" closedby="any" aria-labelledby="hug-title">
+    <div class="hug-dialog-body">
+      <div class="hug-avatar-heart" aria-hidden="true">🤗</div>
+      <h2 id="hug-title" class="hug-urdu-msg">امی جان! میں دل سے آپ کے گلے لگ رہا/رہی ہوں۔</h2>
+      <p class="hug-urdu-msg" style="font-size: 16px; color: var(--text-dark); font-weight: 400;">
+        پلیز اپنے دل سے سارا ملال نکال دیجیے اور اپنے اس بچے کو مسکرا کر معاف فرما دیں۔ آپ کی خوشی میری کائنات ہے۔
+      </p>
+      <p class="hug-eng-msg">
+        "I am hugging you tightly in my heart right now, Ammi. Please smile and forgive me. Your happiness means the entire world to me."
+      </p>
+      <button id="btn-close-hug" class="btn-hug" style="padding: 12px 20px; font-size: 14px;">
+        <span>جی امی جان! مسکرا دیں 💖</span>
+        <span class="btn-hug-eng-sub">(Yes Ammi, please smile)</span>
+      </button>
+    </div>
+  </dialog>
+
+  <!-- MODAL 2: UNFOLDED HEARTFELT LETTER (Bilingual) -->
+  <dialog id="letter-dialog" class="letter-dialog" closedby="any" aria-labelledby="letter-title">
+    <div class="dialog-letter-content">
+      <div class="letter-header-art">
+        <div style="font-size: 22px; color: var(--gold-accent); margin-bottom: 4px;">﷽</div>
+        <h2 id="letter-title" class="letter-greeting">میری پیاری اور محترم امی جان، پروین بانو،</h2>
+        <p style="font-size: 12px; color: var(--gold-accent); letter-spacing: 1px;">A LETTER FROM MY HEART</p>
+      </div>
+
+      <div class="letter-body-urdu">
+        <p>السلام علیکم ورحمۃ اللہ وبرکاتہ،</p>
+        <br>
+        <p>
+          امی جان، میں یہ چند الفاظ بہت ندامت، شرمندگی اور دل کی عمیق ترین محبت کے ساتھ لکھ رہا/رہی ہوں۔ اگر میری کسی لاپرواہی، کسی غلط بات، یا تلخ لہجے سے آپ کا نازک دل دکھا ہے، تو میں ہاتھ جوڑ کر آپ سے دل کی گہرائیوں سے معافی مانگتا/مانگتی ہوں۔
+        </p>
+        <br>
+        <p>
+          سچ تو یہ ہے امی کہ آپ کی ناراضگی کے ساتھ میرا ایک پل بھی چین سے نہیں گزرتا۔ اللہ گواہ ہے کہ آپ وہ ہستی ہیں جن کے بغیر میری زندگی میں کوئی برکت اور کوئی روشنی نہیں ہو سکتی۔
+        </p>
+        
+        <div class="letter-quote-callout">
+          <p style="font-family: var(--font-urdu); font-size: 15px; color: var(--emerald-deep); line-height: 2;">
+            رسول اللہ ﷺ کا فرمان ہے: ”رب کی رضا والدین کی رضا میں ہے، اور رب کی ناراضگی والدین کی ناراضگی میں ہے۔“
+          </p>
+        </div>
+
+        <p>
+          امی، آپ نے میرے لیے جو دکھ سہے، راتوں کو جاگ کر جو دعائیں مانگیں، اور جس پیار سے مجھے سنبھالا، میں اپنی پوری زندگی لگا کر بھی آپ کے ایک احسان کا بدلہ نہیں چکا سکتا۔
+        </p>
+        <br>
+        <p>
+          میں وعدہ کرتا/کرتی ہوں کہ آئندہ آپ کو شکایت کا موقع نہیں دوں گا۔ براہِ کرم اپنے اس بچے کا قصور معاف فرما دیجیے اور اپنے چہرے پر وہی مانوس، پیاری سی مسکراہٹ لے آئیے جس سے ہمارے گھر میں بہار آتی ہے۔
+        </p>
+        <br>
+        <p style="text-align: left; direction: ltr; font-weight: 600; color: var(--emerald-deep);">
+          ہمیشہ آپ کے قدموں کی خاک،<br>
+          آپ کا پیارا بچہ
+        </p>
+      </div>
+
+      <div class="letter-body-eng">
+        <p><strong>Dearest Ammi Jaan (Parveen Banu),</strong></p>
+        <p>
+          Assalamu Alaikum wa Rahmatullahi wa Barakatuh,
+        </p>
+        <br>
+        <p>
+          I write these words with profound humility, deep remorse, and boundless love. If any carelessness, harsh tone, or thoughtless words of mine have hurt your gentle heart, I clasp my hands together and seek your forgiveness from the very bottom of my soul.
+        </p>
+        <br>
+        <p>
+          The truth is, Ammi, I cannot find peace for even a single moment while you are upset with me. Allah is my witness: you are the blessed pillar of our home, and without your warmth and approval, there is no barakah and no light in my life.
+        </p>
+        <br>
+        <div style="background: rgba(197, 160, 89, 0.1); border-left: 3px solid var(--gold-accent); padding: 8px 12px; margin: 8px 0; border-radius: 4px;">
+          <em>The Prophet Muhammad ﷺ said: "The Lord's pleasure is in the parent's pleasure, and the Lord's displeasure is in the parent's displeasure." (Tirmidhi)</em>
+        </div>
+        <br>
+        <p>
+          The silent hardships you bore for me, the tears you shed in late-night prayers while I was asleep, and the pure tenderness with which you raised me — even if I spent my entire lifetime in service, I could never repay even a fraction of what you have given me.
+        </p>
+        <br>
+        <p>
+          I make a sacred pledge to honor and cherish you better every single day. Please forgive your child and bring back that radiant, warm smile that brings sunshine into our lives.
+        </p>
+        <br>
+        <p><strong>Forever at your feet with love and prayers,<br>Your child</strong></p>
+      </div>
+
+      <button id="btn-close-letter" class="btn-close-letter">
+        <span>خط سمیٹیں اور دعاؤں میں یاد رکھیں 🤲</span>
+        <div style="font-size: 11px; opacity: 0.9; font-weight: 400;">Fold Letter & Keep Me in Your Prayers</div>
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Mobile Bottom Sticky Navigation (Bilingual) -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="#sanctuary" class="bottom-nav-item active">
+      <span class="bottom-nav-icon" aria-hidden="true">🏡</span>
+      <span class="bottom-nav-label-urdu">سکون</span>
+      <span class="bottom-nav-label-eng">Peace</span>
+    </a>
+    <a href="#chai" class="bottom-nav-item">
+      <span class="bottom-nav-icon" aria-hidden="true">☕</span>
+      <span class="bottom-nav-label-urdu">چائے</span>
+      <span class="bottom-nav-label-eng">Tea</span>
+    </a>
+    <a href="#letter" class="bottom-nav-item">
+      <span class="bottom-nav-icon" aria-hidden="true">💌</span>
+      <span class="bottom-nav-label-urdu">خط</span>
+      <span class="bottom-nav-label-eng">Letter</span>
+    </a>
+    <a href="#bouquet" class="bottom-nav-item">
+      <span class="bottom-nav-icon" aria-hidden="true">🌸</span>
+      <span class="bottom-nav-label-urdu">گلدستہ</span>
+      <span class="bottom-nav-label-eng">Bouquet</span>
+    </a>
+    <a href="#tasbih" class="bottom-nav-item">
+      <span class="bottom-nav-icon" aria-hidden="true">📿</span>
+      <span class="bottom-nav-label-urdu">تسبیح</span>
+      <span class="bottom-nav-label-eng">Tasbih</span>
+    </a>
+    <a href="#duas" class="bottom-nav-item">
+      <span class="bottom-nav-icon" aria-hidden="true">🤲</span>
+      <span class="bottom-nav-label-urdu">دعا</span>
+      <span class="bottom-nav-label-eng">Duas</span>
+    </a>
+  </nav>
+
+  <script src="./app.js"></script>
+</body>
+</html>
