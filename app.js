@@ -266,17 +266,17 @@ function updateTimeGreeting() {
   if (!greetingUrdu || !greetingEng) return;
 
   if (hour >= 4 && hour < 12) {
-    greetingUrdu.textContent = "صبح بخیر امی جان! اللہ آپ کے دن کو نور، برکت اور عافیت سے بھر دے، ان شاء اللہ۔";
-    greetingEng.textContent = "Good Morning Ammi Jaan! May Allah fill your day with light and ease, in-sha-Allah.";
+    greetingUrdu.textContent = "صبح بخیر امی جان! اللہ آپ کے دن کو نور، برکت اور عافیت سے بھر دے۔ آمین۔";
+    greetingEng.textContent = "Good Morning Ammi Jaan! May Allah fill your day with light and ease. Ameen.";
   } else if (hour >= 12 && hour < 17) {
-    greetingUrdu.textContent = "دوپہر بخیر امی جان! اللہ تعالیٰ آپ کی ہر تھکن کو راحت میں بدل دے، ان شاء اللہ۔";
-    greetingEng.textContent = "Good Afternoon Ammi Jaan! May Allah grant you rest and ease, in-sha-Allah.";
+    greetingUrdu.textContent = "دوپہر بخیر امی جان! اللہ تعالیٰ آپ کی ہر تھکن کو راحت میں بدل دے۔ آمین۔";
+    greetingEng.textContent = "Good Afternoon Ammi Jaan! May Allah grant you rest and ease. Ameen.";
   } else if (hour >= 17 && hour < 21) {
-    greetingUrdu.textContent = "شام بخیر امی جان! ذرا سکھ کا سانس لیجیے، اللہ آپ کو راحت عطا فرمائے، ان شاء اللہ۔";
-    greetingEng.textContent = "Good Evening Ammi Jaan! Take a peaceful breath, may Allah grant you ease, in-sha-Allah.";
+    greetingUrdu.textContent = "شام بخیر امی جان! ذرا سکھ کا سانس لیجیے، اللہ آپ کو راحت عطا فرمائے۔ آمین۔";
+    greetingEng.textContent = "Good Evening Ammi Jaan! Take a peaceful breath, may Allah grant you ease. Ameen.";
   } else {
-    greetingUrdu.textContent = "شب بخیر امی جان! اللہ آپ کو پرسکون نیند اور سلامتی عطا فرمائے، ان شاء اللہ۔";
-    greetingEng.textContent = "Good Night Ammi Jaan! May Allah grant you peaceful sleep and comfort, in-sha-Allah.";
+    greetingUrdu.textContent = "شب بخیر امی جان! اللہ آپ کو پرسکون نیند اور سلامتی عطا فرمائے۔ آمین۔";
+    greetingEng.textContent = "Good Night Ammi Jaan! May Allah grant you peaceful sleep and comfort. Ameen.";
   }
 }
 updateTimeGreeting();
@@ -289,16 +289,16 @@ const moodResponseEng = document.getElementById('mood-response-eng');
 
 const moodResponses = {
   happy: {
-    urdu: "ماشاءاللہ امی جان! اللہ تعالیٰ کے فضل و کرم سے آپ کی مسکراہٹ ہمارے گھر کی بڑی نعمت ہے ان شاء اللہ۔ یا اللہ! پروین بانو کو ہمیشہ مسکراتا اور عافیت میں رکھنا۔ آمین، ان شاء اللہ! 🌸",
-    eng: "Masha'Allah Ammi Jaan! By Allah's will and grace, your smile is a great blessing for our home, in-sha-Allah. O Allah! Keep Parveen Banu smiling and in well-being always. Ameen, in-sha-Allah!"
+    urdu: "ماشاءاللہ امی جان! اللہ تعالیٰ کے فضل و کرم سے آپ کی مسکراہٹ ہمارے گھر کی بڑی نعمت ہے الحمدللہ۔ یا اللہ! پروین بانو کو ہمیشہ مسکراتا اور عافیت میں رکھنا۔ آمین یا رب العالمین! 🌸",
+    eng: "Masha'Allah Ammi Jaan! By Allah's will and grace, your smile is a great blessing for our home, Alhamdulillah. O Allah! Keep Parveen Banu smiling and in well-being always. Ameen! 🌸"
   },
   tired: {
     urdu: "امی جان، اب سب کام چھوڑ دیجیے اور آرام سے تکیہ لگا کر لیٹ جائیں۔ ہم آپ کی خدمت اور راحت کے لیے ہر وقت حاضر ہیں ان شاء اللہ۔ 🛋️",
     eng: "Ammi Jaan, please leave all chores and lean back on a cozy pillow. Your child is always at your service in-sha-Allah."
   },
   sad: {
-    urdu: "امی جان، اللہ کی رضا کی خاطر اپنے اس بچے کو معاف کر دیجیے۔ آپ کے دل کا ملال ہم سے نہیں دیکھا جاتا۔ ہم دل سے معافی مانگتے ہیں اور آپ کے گلے لگتے ہیں۔ اللہ آپ کے دل کو اطمینان عطا فرمائے، پلیز مسکرا دیجیے ان شاء اللہ۔ 💖",
-    eng: "Ammi Jaan, for the sake of Allah please forgive your child. We seek your pardon and hug you tightly in our hearts. May Allah grant peace to your heart. Please smile, in-sha-Allah. 💖"
+    urdu: "امی جان، اللہ کی رضا کی خاطر اپنے اس بچے کو معاف کر دیجیے۔ آپ کے دل کا ملال ہم سے نہیں دیکھا جاتا۔ ہم دل سے معافی مانگتے ہیں اور آپ کے گلے لگتے ہیں۔ اللہ تعالیٰ آپ کے دل کو اطمینان و سکون عطا فرمائے، آمین۔ پلیز مسکرا دیجیے۔ 💖",
+    eng: "Ammi Jaan, for the sake of Allah please forgive your child. We seek your pardon and hug you tightly in our hearts. May Allah grant peace and comfort to your heart, Ameen. Please smile. 💖"
   }
 };
 
@@ -427,8 +427,8 @@ const flowersData = [
     eng: "6. Your boundless patience and sacrifices — whose ultimate reward lies with Allah alone, in-sha-Allah."
   },
   {
-    urdu: "۷. جب بھی میں بیمار ہوا، آپ کا رات بھر جاگنا اور رو رو کر اللہ سے میری شفا مانگنا ان شاء اللہ۔",
-    eng: "7. Whenever I fell ill, your sleepless nights begging Allah for my cure and well-being, in-sha-Allah."
+    urdu: "۷. جب بھی میں بیمار ہوا، آپ کا رات بھر جاگنا اور رو رو کر اللہ تعالیٰ سے میری شفا مانگنا۔",
+    eng: "7. Whenever I fell ill, your sleepless nights beseeching Allah for my healing and well-being."
   },
   {
     urdu: "۸. آپ کی وہ نرم نصیحتیں — جن کے ذریعے اللہ تعالیٰ نے ہمارے لیے رہنمائی اور بھلائی رکھی ہے ان شاء اللہ۔",
