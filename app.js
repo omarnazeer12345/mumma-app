@@ -601,11 +601,6 @@ const duasList = [
     eng: "O Allah, grant her a complete cure and relief that leaves behind no illness or pain."
   },
   {
-    arabic: "اللَّهُمَّ اجْعَلْهَا مِنْ أَهْلِ الْجَنَّةِ وَارْزُقْهَا الْفِرْدَوْسَ الْأَعْلَى",
-    urdu: "یا باری تعالیٰ! میری پیاری امی جان کو بغیر حساب کتاب کے جنت الفردوس کے اعلیٰ درجات میں جگہ عطا فرما۔",
-    eng: "O Allah, make her of the honored people of Jannah and grant her the highest station in Jannat al-Firdaus."
-  },
-  {
     arabic: "اللَّهُمَّ أَدْخِلِ السَّكِينَةَ فِي قَلْبِهَا وَأَبْعِدْ عَنْهَا كُلَّ هَمٍّ وَحُزْنٍ",
     urdu: "اے اللہ! میری امی کے دل میں دائمی سکون اور چین اتار دے، اور ان سے ہر قسم کا غم، ملال اور پریشانی دور فرما دے۔",
     eng: "O Allah, instill eternal peace in her heart and banish every ounce of worry, grief, and sadness from her life."
